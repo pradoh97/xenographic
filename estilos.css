@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+:root{
+  font-size: calc(0.9rem + 0.4vmax);
+}
+@media (max-width: 600px){
+  header nav{
+      flex-flow: column;
+  }
+  header{
+    flex-flow: column;
+  }
+  .logo{
+    align-self: center;
+    width: 50%;
+  }
+}
+@media (min-width: 600px){
+  header nav{
+    flex-grow: 1;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2em;
+  }
+  header{
+    flex-flow: row;
+  }
+  .logo{
+    height: 100px;
+    width: 200px;
+  }
+  .video{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+body{
+  --color-normal: rgb(0, 0, 0);
+  --color-contraste: rgb(255, 255, 255);
+  --color-enfasis: rgb(242, 67, 51);
+
+  margin: 0;
+  font-family: "Inconsolata";
+  background-color: var(--color-normal);
+  color: var(--color-contraste);
+  scroll-behavior: smooth;
+  background-image: url("img/10.jpeg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body > *{
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-contraste);
+}
+a:hover{
+  text-decoration: underline;
+}
+
+h1, h2{
+  color: var(--color-enfasis);
+  text-align: center;
+}
+h2{
+  margin-top: 5em;
+}
+header{
+  display: flex;
+  padding: 1em 0;
+}
+header nav{
+  display: flex;
+  text-align: center;
+}
+header nav a{
+  padding: 1em 2em;
+  transition: background-color, color;
+  transition-duration: 0.4s;
+}
+header nav a:hover{
+  color: var(--color-normal);
+  background-color: var(--color-contraste);
+}
+main{
+  width: 80%;
+  margin: auto;
+}
+
+.portfolio{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1em;
+  grid-auto-flow: dense;
+  max-width: 50%;
+  margin: auto;
+}
+.portfolio > figure{
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+}
+.portfolio img{
+  flex-grow: 1;
+  max-width: 100%;
+  object-fit: cover;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.4s;
+}
+.portfolio figcaption{
+  padding: 0.3em 0.8em;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: right;
+}
+.portfolio .destacado{
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.portfolio img:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.video{
+  text-align: justify;
+}
+.video iframe{
+  max-width: 450px;
+  width: 100%;
+  padding-right: 2em;
+}
