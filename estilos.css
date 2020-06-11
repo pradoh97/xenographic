@@ -13,12 +13,14 @@
     align-self: center;
     width: 50%;
   }
+  .redes .red{
+    font-size: 1.2em;
+    align-items: center;
+  }
 }
 @media (max-width:800px){
-
   h1{
     letter-spacing: 0.3em;
-    font-size: 2em;
   }
 }
 @media (min-width: 800px){
@@ -27,7 +29,6 @@
   }
   h1{
     letter-spacing: 1em;
-    font-size: 2.5em;
   }
 }
 @media (min-width: 600px){
@@ -45,23 +46,19 @@
     height: 100px;
     width: 200px;
   }
-  .video{
-    display: flex;
-    flex-flow: row nowrap;
-  }
 }
 
 body{
   --color-normal: rgb(0, 0, 0);
   --color-contraste: rgb(255, 255, 255);
   --color-enfasis: rgb(242, 67, 51);
-
+  --transicion-normal: 0.4s;
   margin: 0;
   font-family: "Inconsolata";
   background-color: var(--color-normal);
   color: var(--color-contraste);
   scroll-behavior: smooth;
-  background-image: url("img/10.jpeg");
+  background-image: url("res/img/background.jpeg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -70,7 +67,6 @@ body{
 body > *{
   background-color:rgba(0, 0, 0, 0.5);
 }
-
 a{
   text-decoration: none;
   display: inline-block;
@@ -79,13 +75,13 @@ a{
 a:hover{
   text-decoration: underline;
 }
-
 h1{
   color: var(--color-contraste);
   text-align: center;
   margin-top: 5em;
   text-transform: uppercase;
   color: rgb(180, 180, 180);
+  font-size: 2em;
 }
 header{
   display: flex;
@@ -98,7 +94,7 @@ header nav{
 header nav a{
   padding: 1em 2em;
   transition: background-color, color;
-  transition-duration: 0.4s;
+  transition-duration: var(--transicion-normal);
 }
 header nav a:hover{
   color: var(--color-normal);
@@ -109,52 +105,129 @@ main{
   margin: auto;
 }
 
+#volver-arriba{
+  background-color: var(--color-contraste);
+  color: var(--color-normal);
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 0.22em 0.32em;
+  display: inline-block;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  font-weight: 900;
+  z-index: 2;
+}
+#volver-arriba i{
+  color: inherit;
+}
 .container{
   padding-bottom: 1em;
 }
-.portfolio{
+
+.grilla{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 1em;
-  grid-auto-flow: dense;
   margin: auto;
 }
-.portfolio > figure{
+
+.grilla.portafolio{
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-flow: dense;
+}
+.portafolio > figure{
   margin: 0;
   display: flex;
   flex-flow: column;
 }
-.portfolio img{
+.portafolio img{
   flex-grow: 1;
   max-width: 100%;
   object-fit: cover;
   transition-property: transform, box-shadow;
-  transition-duration: 0.4s;
+  transition-duration: var(--transicion-normal);
 }
-.portfolio figcaption{
+.portafolio figcaption{
   padding: 0.3em 0.8em;
   background-color: rgba(0,0,0,0.5);
   color: #fff;
   text-align: right;
 }
-.portfolio .destacado{
+.portafolio .destacado{
   grid-row: span 2;
   grid-column: span 2;
 }
-.portfolio img:hover{
+.portafolio img:hover{
   transform: scale(1.1);
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
+.grilla.musica{
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.cancion{
+  display: flex;
+  flex-flow: column;
+}
+.cancion img{
+  height: auto;
+  width: 100%;
+  transition-duration: var(--transicion-normal);
+  transition-property: fitler;
+  object-fit:cover;
+}
+.cancion:hover img{
+  filter: brightness(60%);
+  z-index: 0;
+}
+.cancion .caratula{
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+.cancion .caratula .boton-juegame{
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  bottom: 40px;
+  z-index: 1;
+}
+.cancion .boton-juegame > *{
+  padding: 0.75em 1em;
+  background: var(--color-enfasis);
+  border-radius: 999px;
+  outline: none;
+  text-decoration: none;
+  transition-duration: var(--transicion-normal);
+  transition-property: box-shadow;
+  cursor: pointer;
+}
+.cancion .boton-juegame > *:hover{
+  box-shadow: 0 0 10em inset rgba(0, 0, 0, 0.2);
+}
+.cancion .boton-juegame > *:active{
+  box-shadow: 0 0 10em inset rgba(0, 0, 0, 0.5);
+}
+
+.grilla.audiovisual{
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 3em;
+}
 .video{
   text-align: justify;
-  margin: 1em;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 .video iframe{
   max-width: 600px;
-  padding-right: 2em;
+  height: 350px;
   width: 100%;
 }
 
@@ -165,16 +238,34 @@ main{
 }
 .redes h1{
   flex-basis: 100%;
+  margin-bottom: 1em;
 }
 div.red{
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  line-height: 0.8;
 }
-.red img{
+.red{
   height: 50px;
   width: auto;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 0.25em 0.5em;
+  transition-property: background-color, color;
+  transition-duration: var(--transicion-normal);
+  outline: none;
+  margin: 0.5em 0.25em;
+}
+div.red:hover{
+  color: var(--color-normal);
+  background-color: var(--color-contraste);
+}
+a.red:hover, div.red:hover i{
+  text-decoration: none;
+}
+.red:hover span{
+  text-decoration: underline;
 }
 .red span{
-  margin: 0 4em 0 1em;
+  margin-left:0.15em;
 }

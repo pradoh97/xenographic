@@ -4,59 +4,109 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="estilos.css">
     <title>Coppoler</title>
+    <script src="https://kit.fontawesome.com/e465e8285d.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
-
+      <a href="#logo" id="volver-arriba" ><i class="fas fa-chevron-up"></i></a>
       <header>
-        <img src="img/firma blanca.png" alt="" class="logo">
+        <img src="res/img/firma blanca.png" alt="" id="logo" class="logo">
         <nav>
           <a href="#trabajos">Xenographic</a>
+          <a href="#musica">Musica</a>
           <a href="#audiovisual">Audiovisual</a>
           <a href="#conectar">Conectá conmigo</a>
           <a href="#nosotros">¿Quién soy?</a>
         </nav>
       </header>
+
       <main>
         <section>
           <h1 id="trabajos">Xenographic</h1>
-          <div class="portfolio">
+          <div class="grilla portafolio">
             <figure>
-              <img src="img/5.jpeg" alt="">
+              <img src="res/img/dibujos/11.jpeg" alt="">
             </figure>
             <figure>
-              <img src="img/1.jpeg" alt="">
+              <img src="res/img/dibujos/7.jpg" alt="">
             </figure>
             <figure>
-              <img src="img/7.jpg" alt="">
+              <img src="res/img/dibujos/1.jpeg" alt="">
             </figure>
             <figure>
-              <img src="img/2.jpeg" alt="">
+              <img src="res/img/dibujos/13.jpeg" alt="">
             </figure>
             <figure>
-              <img src="img/3.jpeg" alt="">
+              <img src="res/img/dibujos/9.jpeg" alt="">
             </figure>
             <figure>
-              <img src="img/6.jpeg" alt="">
+              <img src="res/img/dibujos/8.jpeg" alt="">
             </figure>
             <figure>
-              <img src="img/4.jpeg" alt="">
+              <img src="res/img/dibujos/4.jpeg" alt="">
             </figure>
             <figure>
-              <img src="img/8.jpeg" alt="">
+              <img src="res/img/dibujos/5.jpeg" alt="">
             </figure>
           </div>
         </section>
 
         <section>
+          <h1 id="musica">Música</h1>
+          <div class="grilla musica">
+
+            <div class="cancion">
+              <div class="caratula">
+                <div class="boton-juegame">
+                  <a href="https://manuelvaccarelli.itch.io/high-shot" target="_blank"><i class="fas fa-gamepad"></i>¡Juegame!</a>
+                </div>
+                <img src="res/img/juegos/high shot cover.png" alt="">
+              </div>
+              <audio controls src="res/audio/high shot.mp3"></audio>
+            </div>
+
+            <div class="cancion">
+              <div class="caratula">
+                <div class="boton-juegame">
+                  <a href="https://manuelvaccarelli.itch.io/high-shot" target="_blank"><i class="fas fa-gamepad"></i>¡Juegame!</a>
+                </div>
+                <img src="res/img/juegos/high shot cover.png" alt="">
+              </div>
+              <audio controls src="res/audio/high shot - home.mp3"></audio>
+            </div>
+
+            <div class="cancion">
+              <div class="caratula">
+                <div class="boton-juegame">
+                  <a href="https://manuelvaccarelli.itch.io/llamita" target="_blank"><i class="fas fa-gamepad"></i>¡Juegame!</a>
+                </div>
+                <img src="res/img/juegos/llamita cover.png" alt="">
+              </div>
+              <audio controls src="res/audio/llamita.mp3"></audio>
+            </div>
+
+            <div class="cancion">
+              <div class="caratula">
+                <div class="boton-juegame">
+                  <a><i class="fas fa-gamepad"></i>¡Proximamente!</a>
+                </div>
+                <img src="res/img/juegos/gumy invaders.png" alt="">
+              </div>
+              <audio controls src="res/audio/gumy invaders.mp3"></audio>
+            </div>
+
+          </div>
+        </section>
+
+        <section>
           <h1 id="audiovisual">Audiovisual</h1>
-          <div class="audiovisual">
+          <div class="grilla audiovisual">
             <div class="video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/BYmmoh3xXxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/BYmmoh3xXxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <p>Trabajo de ediciòn, escenografìa, y performance  para un proyecto escolar, acerca de la música y la identidad. </p>
             </div>
             <div class="video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/m4St_5lW7BE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/m4St_5lW7BE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <p>Spot publicitario para el estudio Little paink tatto, montaje, efectos visuales, edicion y sonido.</p>
             </div>
           </div>
@@ -67,15 +117,22 @@
 
           <a class="red" href="https://www.deviantart.com/xeno-graphic" target="_blank">
             <div class="red">
-              <img src="img/deviantart logo.png" alt="logo de deviant art">
+              <i class="fab fa-deviantart"></i>
               <span class="usuario">xeno-graphic</span>
             </div>
           </a>
 
           <a class="red" href="https://www.instagram.com/xeno.graphic/" target="_blank">
             <div class="red">
-              <img src="img/instagram logo.png" alt="logo de deviant art">
+              <i class="fab fa-instagram"></i>
               <span class="usuario">@xeno.graphic</span>
+            </div>
+          </a>
+
+          <a class="red" href="https://itch.io/profile/xenographic">
+            <div class="red">
+              <i class="fab fa-itch-io"></i>
+              <span>xenographic</span>
             </div>
           </a>
         </section>
