@@ -85,6 +85,8 @@ h1{
 }
 header{
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   padding: 1em 0;
 }
 header nav{
@@ -92,7 +94,7 @@ header nav{
   text-align: center;
 }
 header nav a{
-  padding: 1em 2em;
+  padding: 1em 1.5em;
   transition: background-color, color;
   transition-duration: var(--transicion-normal);
 }
@@ -103,6 +105,11 @@ header nav a:hover{
 main{
   width: 80%;
   margin: auto;
+}
+footer{
+  color:rgb(180, 180, 180);
+  text-align: center;
+  padding-bottom: 1em;
 }
 
 #volver-arriba{
