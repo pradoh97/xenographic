@@ -1,93 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 :root{
   font-size: calc(0.9rem + 0.4vmax);
+  scroll-behavior: smooth;
 }
-@media (max-width: 600px){
+
+header{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.logo{
+  align-self: center;
+  width: 150px;
+  padding: 1em 0;
+}
+header nav{
+  flex-grow: 1;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio{
+  max-width: 70%;
+}
+h1{
+  letter-spacing: 2vw;
+}
+
+@media (max-width: 650px){
   header nav{
       flex-flow: column;
   }
   header{
     flex-flow: column;
   }
-  .logo{
-    align-self: center;
-    width: 50%;
-  }
   .redes .red{
     font-size: 1.2em;
     align-items: center;
-  }
-}
-@media (max-width:800px){
-  h1{
-    letter-spacing: 0.3em;
-  }
-}
-@media (min-width: 800px){
-  .portfolio{
-    max-width: 70%;
-  }
-  h1{
-    letter-spacing: 1em;
-  }
-}
-@media (min-width: 600px){
-  header nav{
-    flex-grow: 1;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 2em;
-  }
-  header{
-    flex-flow: row;
-  }
-  .logo{
-    height: 100px;
-    width: 200px;
   }
 }
 
 body{
   --color-normal: rgb(0, 0, 0);
   --color-contraste: rgb(255, 255, 255);
+  --color-contraste-dark: rgb(190, 190, 190);
+  --color-contraste-darker: rgb(120, 120, 120);
   --color-enfasis: rgb(242, 67, 51);
-  --transicion-normal: 0.4s;
+  --transicion-normal: 0.3s;
   margin: 0;
   font-family: "Inconsolata";
   background-color: var(--color-normal);
   color: var(--color-contraste);
   scroll-behavior: smooth;
   background-image: url("res/img/background.jpeg");
+  background-color: rgba(0,0,0,0.5);
+  background-blend-mode: multiply;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: justify;
 }
-body > *{
-  background-color:rgba(0, 0, 0, 0.5);
-}
+
 a{
   text-decoration: none;
   display: inline-block;
   color: var(--color-contraste);
 }
-a:hover{
-  text-decoration: underline;
-}
 h1{
   color: var(--color-contraste);
   text-align: center;
-  margin-top: 5em;
   text-transform: uppercase;
   color: rgb(180, 180, 180);
   font-size: 2em;
-}
-header{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 1em 0;
 }
 header nav{
   display: flex;
@@ -95,12 +79,17 @@ header nav{
 }
 header nav a{
   padding: 1em 1.5em;
+}
+header nav a, div.red, footer a, #volver-arriba{
   transition: background-color, color;
   transition-duration: var(--transicion-normal);
 }
-header nav a:hover{
+header nav a:hover, div.red:hover, footer a:hover{
   color: var(--color-normal);
   background-color: var(--color-contraste);
+}
+header nav a:active{
+  background-color: var(--color-contraste-dark);
 }
 main{
   width: 80%;
@@ -110,6 +99,10 @@ footer{
   color:rgb(180, 180, 180);
   text-align: center;
   padding-bottom: 1em;
+  margin-top: 5em;
+}
+footer i{
+  color: var(--color-enfasis);
 }
 
 #volver-arriba{
@@ -130,8 +123,11 @@ footer{
 #volver-arriba i{
   color: inherit;
 }
-.container{
-  padding-bottom: 1em;
+#volver-arriba:hover{
+  background-color: var(--color-contraste-dark);
+}
+#volver-arriba:active{
+  background-color: var(--color-contraste-darker);
 }
 
 .grilla{
@@ -142,7 +138,7 @@ footer{
 }
 
 .grilla.portafolio{
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-flow: dense;
 }
 .portafolio > figure{
@@ -185,16 +181,27 @@ footer{
   width: 100%;
   transition-duration: var(--transicion-normal);
   transition-property: fitler;
+  -moz-transition-property: filter;
   object-fit:cover;
 }
 .cancion:hover img{
   filter: brightness(60%);
-  z-index: 0;
 }
 .cancion .caratula{
   position: relative;
   display: flex;
   height: 100%;
+}
+.cancion .caratula h2{
+  position: absolute;
+  margin: 0;
+  padding: 0.5em 0.25em;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  box-sizing:border-box;
+  box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.75);
 }
 .cancion .caratula .boton-juegame{
   position: absolute;
@@ -258,20 +265,8 @@ div.red{
   font-size: 1.5em;
   text-decoration: none;
   padding: 0.25em 0.5em;
-  transition-property: background-color, color;
-  transition-duration: var(--transicion-normal);
   outline: none;
   margin: 0.5em 0.25em;
-}
-div.red:hover{
-  color: var(--color-normal);
-  background-color: var(--color-contraste);
-}
-a.red:hover, div.red:hover i{
-  text-decoration: none;
-}
-.red:hover span{
-  text-decoration: underline;
 }
 .red span{
   margin-left:0.15em;
