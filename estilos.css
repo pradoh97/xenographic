@@ -32,6 +32,8 @@ header nav{
 }
 h1{
   letter-spacing: 2vw;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
 }
 
 @media (max-width: 650px){
@@ -44,6 +46,11 @@ h1{
   .redes .red{
     font-size: 1.2em;
     align-items: center;
+  }
+  .logo{
+    align-self: center;
+    width: 100px;
+    padding: 1em 0;
   }
 }
 
@@ -81,11 +88,11 @@ header nav{
 header nav a{
   padding: 1em 1.5em;
 }
-header nav a, div.red, footer a, #volver-arriba{
+header nav a, .red, footer a, #volver-arriba{
   transition: background-color, color;
   transition-duration: var(--transicion-normal);
 }
-header nav a:hover, div.red:hover, footer a:hover{
+header nav a:hover, .red:hover, footer a:hover{
   color: var(--color-normal);
   background-color: var(--color-contraste);
 }
@@ -101,6 +108,9 @@ footer{
   text-align: center;
   padding-bottom: 1em;
   margin-top: 5em;
+}
+footer a{
+  text-decoration: underline;
 }
 footer i{
   color: var(--color-enfasis);
@@ -192,6 +202,7 @@ footer i{
   position: relative;
   display: flex;
   height: 100%;
+  overflow: hidden;
 }
 .cancion .caratula h2{
   position: absolute;
@@ -228,6 +239,9 @@ footer i{
 .cancion .boton-juegame > *:active{
   box-shadow: 0 0 10em inset rgba(0, 0, 0, 0.5);
 }
+.cancion audio{
+  width: 100%;
+}
 
 .grilla.audiovisual{
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -241,9 +255,9 @@ footer i{
   align-items: center;
 }
 .video iframe{
-  max-width: 600px;
-  height: 350px;
-  width: 100%;
+  max-width: 600px !important;
+  height: 350px !important;
+  width: 100% !important;
 }
 
 .redes{
@@ -253,15 +267,13 @@ footer i{
 }
 .redes h1{
   flex-basis: 100%;
-  margin-bottom: 1em;
 }
-div.red{
+.red div{
   display: flex;
   flex-flow: row nowrap;
   line-height: 0.8;
 }
 .red{
-  height: 50px;
   width: auto;
   font-size: 1.5em;
   text-decoration: none;
