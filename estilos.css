@@ -2,6 +2,13 @@
 :root{
   font-size: calc(0.9rem + 0.4vmax);
   scroll-behavior: smooth;
+  --color-normal: rgb(0, 0, 0);
+  --color-contraste: rgb(255, 255, 255);
+  --color-contraste-dark: rgb(190, 190, 190);
+  --color-contraste-darker: rgb(120, 120, 120);
+  --color-enfasis: rgb(242, 67, 51);
+  --transicion-normal: 0.3s;
+  --imagen-fondo: url("res/img/background.jpeg");
 }
 
 header{
@@ -41,18 +48,12 @@ h1{
 }
 
 body{
-  --color-normal: rgb(0, 0, 0);
-  --color-contraste: rgb(255, 255, 255);
-  --color-contraste-dark: rgb(190, 190, 190);
-  --color-contraste-darker: rgb(120, 120, 120);
-  --color-enfasis: rgb(242, 67, 51);
-  --transicion-normal: 0.3s;
   margin: 0;
   font-family: "Inconsolata";
   background-color: var(--color-normal);
   color: var(--color-contraste);
   scroll-behavior: smooth;
-  background-image: url("res/img/background.jpeg");
+  background-image: var(--imagen-fondo);
   background-color: rgba(0,0,0,0.5);
   background-blend-mode: multiply;
   background-position: top;
